@@ -1,4 +1,4 @@
-import { encryptData } from "../helpers/encrypt";
+import { decryptData, encryptData } from "../helpers/encrypt";
 import Auth from "./Auth";
 import Person from "./Person";
 
@@ -21,6 +21,13 @@ class RegularUser extends Person{
         users.push(user)
         localStorage.setItem("users", JSON.stringify(users))
         Auth.login(); // Is called method login of class Auth
+    }
+    static getUsers(){
+        return this.users = JSON.parse(localStorage.getItem("users")) || [];
+    }
+    static findExistsUser(emailUser,passwordUser,users){
+        const foundUser = users.find(user=> user.email === emailUser && decryptData(user.password) === passwordUser);
+        return foundUser;
     }
     
 }

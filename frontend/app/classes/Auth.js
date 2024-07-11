@@ -6,6 +6,9 @@ class Auth{
     static generateToken(){
         return Math.random().toString(36).substring(2);
     }
+    static verifyForm(...fields){
+        return fields.every(field=>field)
+    }
 }
 
 export default Auth;

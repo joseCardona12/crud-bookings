@@ -1,5 +1,5 @@
+import Auth from "../../../classes/Auth";
 import RegularUser from "../../../classes/RegularUser";
-import { verifyForm } from "../../../helpers/verifyForm";
 import { NavigateTo } from "../../../Router";
 
 export const controller = () =>{
@@ -10,13 +10,20 @@ export const controller = () =>{
         const $emailUserRegular = document.getElementById("emailUser"); 
         const $passwordUserRegular = document.getElementById("passwordUser"); 
 
-        const formVerify = verifyForm($nameUserRegular.value, $emailUserRegular.value, $passwordUserRegular.value);
+        const formVerify = Auth.verifyForm($nameUserRegular.value, $emailUserRegular.value, $passwordUserRegular.value)   
         if(!formVerify){
             console.log({message: "Please, Fill all fields"});
             return;
         }
         const userRegular = new RegularUser($nameUserRegular.value,$emailUserRegular.value, $passwordUserRegular.value);
-        userRegular.register();
-        NavigateTo("/login");
-    })  
+        const usersGet = RegularUser.getUsers(); // Get user to localStorage
+        const existsUserFind = RegularUser.findExistsUser($emailUserRegular.value,$passwordUserRegular.value, usersGet);
+
+        if(!existsUserFind){
+            userRegular.register();
+            NavigateTo("/login");
+            return;
+        }
+        console.log({message: "Error. Registered user"})
+    });
 }

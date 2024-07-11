@@ -5,9 +5,9 @@ export const LoginView = () =>{
     `
     <form action="form" id="formLogin">
         <h2 class="form-title">Login</h2>
-        <div class="form-name">
-            <label class="name-label form-label" for="name">Name:</label>
-            <input class="name-input form-control" id="nameUser" type="text" name="name">
+        <div class="form-email">
+            <label class="email-label form-label" for="email">Email:</label>
+            <input class="email-input form-control" id="emailUser" type="email" name="email">
         </div>
         <div class="form-password">
             <label class="password-label form-label" for="password">Password:</label>

@@ -1,24 +1,18 @@
-import { decryptData } from "../../../helpers/encrypt";
+import RegularUser from "../../../classes/RegularUser";
 
 export const controller = () =>{
     const $formLogin = document.getElementById("formLogin");
     $formLogin.addEventListener("submit", (e)=>{
         e.preventDefault();
-        const $nameUser = document.getElementById("nameUser");
+        const $emailUser = document.getElementById("emailUser");
         const $passwordUser = document.getElementById("passwordUser");
         
-        const usersGet = getUsers();
-        verifyExistsUser($nameUser.value, $passwordUser.value, usersGet);
+        const usersGet = RegularUser.getUsers(); // Is called the method getUsers
+        const existsUserFind = RegularUser.findExistsUser($emailUser.value, $passwordUser.value,usersGet); // Verify exists user for email and password
+        if(!existsUserFind){
+            console.log({message: "User not found"});
+            return;
+        }
+        console.log("Wellcome user")
     })
-}
-
-const getUsers = () =>{
-    const usersGet = localStorage.getItem("users");
-    return usersGet;
-}
-
-const verifyExistsUser = (nameUser,passwordUser,users) =>{
-    const usersConvert = JSON.parse(users);
-    const existsUser = usersConvert.find(user=>user.name === nameUser && decryptData(user.password) === passwordUser);
-    console.log(existsUser)
 }
