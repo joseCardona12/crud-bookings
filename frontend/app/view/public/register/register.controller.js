@@ -21,6 +21,7 @@ export const controller = () =>{
 
         if(!existsUserFind){
             userRegular.register();
+            console.log({message: "Registered user correctly"})
             NavigateTo("/login");
             return;
         }

@@ -1,3 +1,4 @@
+import Auth from "../../../classes/Auth";
 import RegularUser from "../../../classes/RegularUser";
 
 export const controller = () =>{
@@ -13,6 +14,7 @@ export const controller = () =>{
             console.log({message: "User not found"});
             return;
         }
-        console.log("Wellcome user")
+        Auth.login(existsUserFind.id_rol);
+        
     })
 }
