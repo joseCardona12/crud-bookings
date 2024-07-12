@@ -21,6 +21,9 @@ class RegularUser extends Person{
         users.push(user)
         localStorage.setItem("users", JSON.stringify(users))
     }
+    createBooking(){
+        
+    }
     static getUsers(){
         return this.users = JSON.parse(localStorage.getItem("users")) || [];
     }

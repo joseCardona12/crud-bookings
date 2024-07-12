@@ -1,5 +1,6 @@
 import Auth from "../../../classes/Auth";
 import RegularUser from "../../../classes/RegularUser";
+import { NavigateTo } from "../../../Router";
 
 export const controller = () =>{
     const $formLogin = document.getElementById("formLogin");
@@ -14,7 +15,9 @@ export const controller = () =>{
             console.log({message: "User not found"});
             return;
         }
-        Auth.login(existsUserFind.id_rol);
+        console.log("Loading...");
+        Auth.login(existsUserFind.id_rol,existsUserFind.id_user);
+        NavigateTo("/home-dashboard-user");
         
     })
 }

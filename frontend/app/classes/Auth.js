@@ -1,11 +1,11 @@
-import { NavigateTo } from "../Router";
+import { encryptData } from "../helpers/encrypt";
 
 class Auth{
-    static login(id_rol){
+    static login(id_rol,id_user){
         const token = Auth.generateToken();
         localStorage.setItem("token", token);
         localStorage.setItem("id_rol", id_rol);
-        NavigateTo("/home-dashboard-user");
+        localStorage.setItem("id_user", encryptData(id_user))
     }
     static generateToken(){
         return Math.random().toString(36).substring(2);

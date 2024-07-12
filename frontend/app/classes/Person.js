@@ -9,8 +9,8 @@ class Person{
     register(user){
 
     }
-    createBooking(){
-
+    createBooking(nameStart,nameEnd,dateStart,dateEnd,quantityPeople){
+        return "Method of class Person. Create booking"
     }
 }
 
