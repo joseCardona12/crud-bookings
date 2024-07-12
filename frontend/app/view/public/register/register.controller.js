@@ -1,3 +1,4 @@
+import { Administrator } from "../../../classes/Administrator";
 import Auth from "../../../classes/Auth";
 import RegularUser from "../../../classes/RegularUser";
 import { NavigateTo } from "../../../Router";
@@ -16,8 +17,7 @@ export const controller = () =>{
             return;
         }
         const userRegular = new RegularUser($nameUserRegular.value,$emailUserRegular.value, $passwordUserRegular.value);
-        const usersGet = RegularUser.getUsers(); // Get user to localStorage
-        const existsUserFind = RegularUser.findExistsUser($emailUserRegular.value,$passwordUserRegular.value, usersGet);
+        const existsUserFind = userRegular.findExistsUser($emailUserRegular.value,$passwordUserRegular.value);
 
         if(!existsUserFind){
             userRegular.register();

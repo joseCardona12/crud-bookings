@@ -9,7 +9,6 @@ export class Booking{
         this.endDate = endDate;
         this.quantityPeople = quantityPeople;
         this.idUser = idUser;
-
     }
 }
 
