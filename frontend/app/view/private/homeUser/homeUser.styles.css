@@ -1,0 +1,16 @@
+div.content-bookings{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+div.content-bookings > article.bookings-article{
+    width: calc((100% / 4) - 20px);
+}
+
+div.content-bookings > article.bookings-article > div.article-body > div.body-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}

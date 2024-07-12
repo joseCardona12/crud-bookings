@@ -1,24 +1,28 @@
-export const Navbar = () =>{
+import { navbarController } from "./navbar.controller";
+import styles from "./navbar.styles.css";
+
+export const Navbar = (navbarData = []) =>{
     const viewNavbar = 
     `
-    <div class="header-title">
-        <h4>Dashboard Home user</h4>
+    <div class="${styles["header-title"]}">
+        <h4 class="${styles["title"]}">Dashboard Home user</h4>
     </div>
-    <nav class="header-nav">
-        <ul class="nav-list">
-            <li class="list-item">
-                <button class="item-button btn btn-info">Home</button>
-            </li>
+    <nav class="${styles["header-nav"]}">
+        <ul class="${styles["nav-list"]}">
+            ${navbarData.map(data=>
+                `
+                    <li class="${styles["list-item"]}">
+                        <button class="${styles["item-button"]} btn btn-primary" data-href="${data.href}">${data.name}</button>
+                    </li>
+                `
+            ).join("")}
         </ul>
     </nav>    
     `
 
-    const logicNavbar = () =>{
-        
-    }
     return {
         viewNavbar,
-        logicNavbar
+        navbarController
     }
 
 }

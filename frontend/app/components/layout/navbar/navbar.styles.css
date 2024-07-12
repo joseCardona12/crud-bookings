@@ -1,0 +1,8 @@
+nav.header-nav > ul.nav-list{
+    display: flex;
+    gap: 20px;
+}
+
+nav.header-nav > ul.nav-list > li.list-item{
+    list-style: none;
+}

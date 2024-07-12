@@ -13,6 +13,11 @@ class Auth{
     static verifyForm(...fields){
         return fields.every(field=>field)
     }
+    static logout(){
+        localStorage.removeItem("id_rol");
+        localStorage.removeItem("id_user");
+        localStorage.removeItem("token");
+    }
 }
 
 export default Auth;

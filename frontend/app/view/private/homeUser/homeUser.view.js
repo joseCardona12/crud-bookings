@@ -1,9 +1,10 @@
 import {controllerPrivate } from "./homeUser.controller";
+import styles from "./homeUser.styles.css"
 
 export const HomeUserView = () =>{
     const viewPrivate = 
     `<form class="form-booking" id="formBooking">
-        <h2 class="booking-title">Bookings</h2>
+        <h2 class="booking-title">Create Bookings</h2>
         <div class="booking-name-country-start">
             <label class="start-label form-label" for="name-country-start">Name country start:</label>
             <input class="start-input form-control" id="nameCountryStart" type="text" name="name-country-start">
@@ -24,9 +25,10 @@ export const HomeUserView = () =>{
             <label class="people-label form-label" for="quantity-people">Quantity people:</label>
             <input class="people-input form-control" id="quantityPeople" type="number" name="quantity-people">
         </div>
-        <input class="booking-button btn btn-primary mt-2" type="submit">
+        <input class="booking-button btn btn-primary mt-2" type="submit" value="Send">
     </form>
-    <div class="content-bookings" id="contentBookings"></div>
+    <h3 class="mt-2">Bookings</h3>
+    <div class="${styles["content-bookings"]} mt-2" id="contentBookings">There are not bookings...</div>
     `;
 
     return {
