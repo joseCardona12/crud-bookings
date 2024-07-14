@@ -1,0 +1,10 @@
+section.section-bookings > div.bookings-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+section.section-bookings > div.bookings-content > article{
+    width: calc((100% / 4) - 20px);
+}

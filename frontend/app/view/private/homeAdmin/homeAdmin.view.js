@@ -10,9 +10,10 @@ export const HomeAdminView = () =>{
                     <i class="bi bi-person"></i>
                     <h6>Users:</h6>
                     <span id="countUsers">12</span>
+                    <a href="/home-dashboard-admin/bookings">Bookings</a>
                 </div>
                 <div class="${styles["users-rigth"]}">
-                    <input class="${styles["right-input"]}" type="text">
+                    <input class="${styles["right-input"]}" type="text" id="searchUsers">
                     <button class="${styles["right-button"]} btn btn-info"> 
                         <i class="bi bi-plus-circle"></i> 
                         Add

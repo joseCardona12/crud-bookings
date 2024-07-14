@@ -6,6 +6,7 @@ import styles from "./homeAdmin.styles.css";
 export const controllerPrivate = () =>{
     const $contentBodyTable = document.getElementById("bodyContent");
     const $counUsers = document.getElementById("countUsers");
+    const $searchUsers = document.getElementById("searchUsers");
     const $buttons = document.querySelectorAll(`.${styles["users-rigth"]} button`);
     const administrator = new Administrator();
     administrator.renderUsers($contentBodyTable);
@@ -56,6 +57,12 @@ export const controllerPrivate = () =>{
     
     //Change count users - render count 
     administrator.renderCountUsersLegth($counUsers);  
+
+
+    // Html element input - search
+    $searchUsers.addEventListener("input", ()=>{
+        console.log($searchUsers.value)
+    })
     
     // $counUsers.
 }
