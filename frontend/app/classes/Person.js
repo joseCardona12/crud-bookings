@@ -11,7 +11,7 @@ class Person{
             "name": "admin",
             "email": "admin@gmail.com",
             "password": encryptData("123"),
-            "id_rol": 2
+            "id_rol": "2"
         }
         this.users = JSON.parse(localStorage.getItem("users")) || [this.administrator];
     }
@@ -26,9 +26,12 @@ class Person{
             "id_rol": rol_id
         }
         this.users.push(user)
+        this.saveUsers();
+    }
+    saveUsers(){
         localStorage.setItem("users", JSON.stringify(this.users))
     }
-    getUser(){
+    getUsers(){
         return this.users;
     }
     findExistsUser(emailUser,passwordUser){

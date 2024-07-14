@@ -8,7 +8,7 @@ export const controller = () =>{
         const $emailUser = document.getElementById("emailUser");
         const $passwordUser = document.getElementById("passwordUser");
         
-        const userRegular = new RegularUser("","","");
+        const userRegular = new RegularUser();
         const existsUserFind = userRegular.findExistsUser($emailUser.value, $passwordUser.value); // Verify exists user for email and password
         if(!existsUserFind){
             console.log({message: "User not found"});

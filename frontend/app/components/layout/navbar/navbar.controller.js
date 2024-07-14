@@ -9,8 +9,12 @@ export const navbarController = () =>{
             
             if(button.textContent === "Home"){
                 if(localStorage.getItem("id_rol") === "1"){
-                    NavigateTo(attributeHref)
+                    NavigateTo(attributeHref);
                     return;
+                }
+                if(localStorage.getItem("id_rol") === "2"){
+                    NavigateTo("/home-dashboard-admin");
+                    return;  
                 }
             }
             if(button.textContent === "Logout"){

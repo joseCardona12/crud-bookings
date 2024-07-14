@@ -8,11 +8,11 @@ class Auth{
         localStorage.setItem("id_rol", id_rol);
         localStorage.setItem("id_user", encryptData(id_user))
 
-        if(id_rol === 1){
+        if(id_rol === "1"){
             NavigateTo("/home-dashboard-user");
             return;
         }
-        if(id_rol === 2){
+        if(id_rol === "2"){
             NavigateTo("/home-dashboard-admin");
             return;
         }

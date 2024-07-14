@@ -1,0 +1,39 @@
+section.main-section > div.section-content-users > div.users-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+section.main-section > div.section-content-users > div.users-top > div.top-left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section.main-section > div.section-content-users > div.users-body{
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+section.main-section > div.section-content-users > div.users-body > table.body-table{
+    width: 100%;
+} 
+
+section.main-section > div.section-content-users > div.users-body > table.body-table > thead.table-header > tr > th{
+    width: calc((100% / 3));
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 10px;
+    padding: 6px;
+    
+}
+
+section.main-section > div.section-content-users > div.users-body > table.body-table > tbody.table-body{
+}
+section.main-section > div.section-content-users > div.users-body > table.body-table > tbody.table-body > tr.body-row {
+    border: 1px solid rgb(219, 219, 219);
+}
+
+section.main-section > div.section-content-users > div.users-body > table.body-table > tbody.table-body > tr.body-row.element-selected{
+    background-color: rgb(240, 240, 240);
+}

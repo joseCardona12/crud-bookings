@@ -2,10 +2,11 @@ import { navbarController } from "./navbar.controller";
 import styles from "./navbar.styles.css";
 
 export const Navbar = (navbarData = []) =>{
+    const id_rol = localStorage.getItem("id_rol");
     const viewNavbar = 
     `
     <div class="${styles["header-title"]}">
-        <h4 class="${styles["title"]}">Dashboard Home user</h4>
+        <h4 class="${styles["title"]}">${id_rol === "1" ? "Dashboard Home user": "Dashboard Home admin"}</h4>
     </div>
     <nav class="${styles["header-nav"]}">
         <ul class="${styles["nav-list"]}">
