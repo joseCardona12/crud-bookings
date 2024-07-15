@@ -7,6 +7,23 @@ export const Router = () =>{
     const publicRoute = routes.public.find(route=>route.path === path);
     const privateRoute = routes.private.find(route=>route.path === path);
 
+    if(path === "/login" || path === "/register"){
+        if(localStorage.getItem("token") && localStorage.getItem("id_rol") === "1"){
+            NavigateTo("/home-dashboard-user");
+            return;
+        }
+        if(localStorage.getItem("token") && localStorage.getItem("id_rol") === "2"){
+            NavigateTo("/home-dashboard-admin");
+            return;
+        }
+    }
+    if(path === "/home-dashboard-admin" || path === "/home-dashboard-admin/addUser-view" ||
+        path === "/home-dashboard-admin/editUser-view" || path === "/home-dashboard-admin/bookings" || 
+        path === "/home-dashboard-admin/bookings/editBooking" && localStorage.getItem("id_rol") === "1"){
+            NavigateTo("/home-dashboard-user");
+            return;
+        }
+
     if(path === "/"){
         NavigateTo("/login")
         return;
