@@ -16,7 +16,7 @@ class Person{
         this.users = JSON.parse(localStorage.getItem("users")) || [this.administrator];
     }
 
-    register(rol_id = 1){
+    register(rol_id = "1"){
         const generateID = Date.now().toString(30);
         const user = {
             "id_user": generateID,
